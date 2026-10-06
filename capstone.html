@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>When Low Utilization Still Feels Crowded | Logan Belko</title>
+<meta name="description" content="Senior capstone research by Logan Belko comparing machine utilization and user experience at two University of Arizona recreation centers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="index.html">Logan Belko</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="wrap p-hero">
+    <a class="back" href="index.html#work">Back to all work</a>
+    <dl class="tblock">
+      <div><dt>Project</dt><dd>Senior capstone research</dd></div>
+      <div><dt>Course</dt><dd>SBE 498, University of Arizona</dd></div>
+      <div><dt>Mentor</dt><dd>Dr. Nataliya Apanovich</dd></div>
+      <div><dt>Date</dt><dd>Spring 2026</dd></div>
+      <div><dt>Role</dt><dd>Sole researcher</dd></div>
+    </dl>
+    <h1>When low utilization still feels crowded</h1>
+    <p class="sub">Spatial demand, LEED context, and user experience in University of Arizona recreation centers</p>
+  </header>
+
+  <div class="wrap">
+    <figure class="poster sheet">
+      <span class="reg tl"></span><span class="reg tr"></span><span class="reg bl"></span><span class="reg br"></span>
+      <a href="assets/docs/belko-capstone-poster.png" target="_blank" rel="noopener"><img src="assets/img/capstone-poster.jpg" width="2800" height="1867" alt="Research poster: study overview, methods, annotated floor plans of SouthREC and NorthREC, a utilization versus perceived experience chart, machine demand table, key findings, and design implications."></a>
+      <figcaption>Capstone poster, presented Spring 2026. Select to open full size.</figcaption>
+    </figure>
+
+    <div class="keyfigs" style="margin-top: clamp(32px, 5vw, 56px)">
+      <div><b>10.5–17.2%</b><span>Average cardio machine use, across both facilities and both time blocks.</span></div>
+      <div><b>35.7%</b><span>Share of SouthREC users at 5PM who couldn't access the equipment they wanted.</span></div>
+      <div><b>4.2%</b><span>Share of blocked users who moved to another area. Half waited where they were.</span></div>
+    </div>
+  </div>
+
+  <section class="p-section" aria-labelledby="q-h" style="margin-top: clamp(40px, 6vw, 72px)">
+    <div class="wrap split">
+      <h2 id="q-h">The question</h2>
+      <div class="content">
+        <p>Recreation centers are usually judged by capacity and equipment counts. Those numbers don't explain how a space feels to the people using it.</p>
+        <p>This study compared SouthREC, the first collegiate recreation center to earn LEED Platinum, with the smaller, three-level NorthREC. It asked whether layout, equipment concentration, and environmental conditions shape user experience more directly than total capacity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="m-h">
+    <div class="wrap split">
+      <h2 id="m-h">Approach</h2>
+      <div class="content">
+        <p>A mixed-method post-occupancy evaluation, pairing direct observation of equipment use with short intercept surveys at the same sessions.</p>
+        <dl class="spec">
+          <div><dt>Sites</dt><dd>SouthREC (LEED Platinum, about 130,000 sq ft) and NorthREC (about 52,000 sq ft, three levels)</dd></div>
+          <div><dt>Observations</dt><dd>259 counts of cardio machine use, February 23 to March 21, 2026</dd></div>
+          <div><dt>Surveys</dt><dd>106 responses from 370 users approached, covering crowding, comfort, movement, equipment access, and how people adapted</dd></div>
+          <div><dt>Schedule</dt><dd>11AM and 5PM sessions, Monday through Saturday, alternating which facility came first each day and week</dd></div>
+          <div><dt>Analysis</dt><dd>Utilization rates, survey scoring, and charts built in Google Sheets</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="f-h">
+    <div class="wrap split">
+      <h2 id="f-h">Findings</h2>
+      <div class="content">
+
+        <div class="finding">
+          <h3>Machines sat mostly empty, but access problems nearly tripled by evening</h3>
+          <div class="chart-card">
+            <div class="legend" aria-hidden="true">
+              <span><i style="background: var(--sky)"></i>Machines in use</span>
+              <span><i style="background: var(--rust)"></i>Users who couldn't access equipment</span>
+            </div>
+            <div class="chart-wrap" id="dumbbell" role="img" aria-label="Dumbbell chart. Machine use stayed between 10.5 and 17.2 percent while the share of users unable to access equipment rose from 13.6 percent at NorthREC 11AM to 35.7 percent at SouthREC 5PM."></div>
+            <details>
+              <summary>Show as table</summary>
+              <div class="tbl-wrap">
+                <table class="data">
+                  <thead><tr><th>Session</th><th class="num">Machines in use</th><th class="num">Couldn't access</th><th class="num">Crowding (1–5)</th></tr></thead>
+                  <tbody>
+                    <tr><td>NorthREC 11AM</td><td class="num">12.4%</td><td class="num">13.6%</td><td class="num">2.5</td></tr>
+                    <tr><td>SouthREC 11AM</td><td class="num">10.5%</td><td class="num">16.0%</td><td class="num">2.7</td></tr>
+                    <tr><td>NorthREC 5PM</td><td class="num">17.2%</td><td class="num">28.6%</td><td class="num">3.0</td></tr>
+                    <tr><td>SouthREC 5PM</td><td class="num">13.1%</td><td class="num">35.7%</td><td class="num">2.4</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </div>
+          <p>Every session fell in the low-utilization range (under 30%). Users still rated crowding as moderate, between 2.4 and 3.0 out of 5, and access problems climbed sharply at 5PM.</p>
+        </div>
+
+        <div class="finding">
+          <h3>Demand piled onto two machine types</h3>
+          <div class="chart-card tbl-wrap">
+            <table class="data">
+              <thead><tr><th>Machine</th><th>NorthREC 11AM</th><th>SouthREC 11AM</th><th>NorthREC 5PM</th><th>SouthREC 5PM</th></tr></thead>
+              <tbody id="machines"></tbody>
+            </table>
+          </div>
+          <p>Treadmills and Stairmasters carried most of the load, peaking near 47% at SouthREC in the evening. Arc trainers, hand pedals, and other equipment went unused in every session.</p>
+        </div>
+
+        <div class="finding">
+          <h3>When blocked, people waited instead of moving</h3>
+          <div class="chart-card">
+            <div class="hbars" id="adapt"></div>
+          </div>
+          <p>Share of respondents who couldn't access equipment, by what they did next. Users stayed in their preferred zone, so even a few busy machines created congestion in one spot.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="l-h">
+    <div class="wrap split">
+      <h2 id="l-h">Layout</h2>
+      <div class="content">
+        <p>SouthREC concentrates cardio on one open floor, along the north edge with the strongest daylight and views. NorthREC splits activity across three levels. In both buildings, demand clustered in a few zones rather than spreading across the available equipment.</p>
+        <div class="plans">
+          <figure class="fig">
+            <img src="assets/img/southrec-plan.jpg" width="1400" height="1596" alt="SouthREC floor plan with concentrated cardio demand zones highlighted in orange along the northern fitness floor and outdoor courtyard areas in green.">
+            <figcaption>SouthREC: cardio demand concentrated along the northern fitness floor.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="assets/img/northrec-plans.jpg" width="1400" height="1659" alt="NorthREC floor plans for three levels with cardio demand zones highlighted on levels one and two.">
+            <figcaption>NorthREC: activity distributed across three levels.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="d-h">
+    <div class="wrap split">
+      <h2 id="d-h">Design implications</h2>
+      <div class="content">
+        <ul class="bul">
+          <li>Adding equipment won't fix crowding if demand stays concentrated on a few machine types.</li>
+          <li>Place high-demand machines in accessible, well-circulated locations.</li>
+          <li>Pair environmental features like daylight and views with the equipment people actually use.</li>
+          <li>Evaluate sustainable buildings on how they perform in use, alongside how they're certified.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="n-h">
+    <div class="wrap split">
+      <h2 id="n-h">Limitations and next steps</h2>
+      <div class="content">
+        <p>The study covered two facilities, two daily time blocks, and self-reported survey data. Environmental conditions were discussed qualitatively. Future work could add direct measurements of temperature, airflow, and daylight alongside behavioral data, and extend observation to more times of day.</p>
+        <div class="links-row">
+          <a class="btn" href="assets/docs/belko-capstone-paper.pdf" target="_blank" rel="noopener">Read the full paper (PDF)</a>
+          <a class="btn ghost" href="assets/docs/belko-capstone-poster.png" target="_blank" rel="noopener">View the poster</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Logan Belko.</div></footer>
+
+<script>
+(function () {
+  // Utilization vs. access dumbbell chart
+  var rows = [
+    { s: 'NorthREC 11AM', use: 12.4, no: 13.6, crowd: 2.5 },
+    { s: 'SouthREC 11AM', use: 10.5, no: 16.0, crowd: 2.7 },
+    { s: 'NorthREC 5PM',  use: 17.2, no: 28.6, crowd: 3.0 },
+    { s: 'SouthREC 5PM',  use: 13.1, no: 35.7, crowd: 2.4 }
+  ];
+  var W = 720, L = 128, R = 40, T = 16, rowH = 52, B = 34;
+  var H = T + rows.length * rowH + B, max = 40;
+  var x = function (v) { return L + (v / max) * (W - L - R); };
+  var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg">';
+  for (var t = 0; t <= max; t += 10) {
+    s += '<line class="axis" x1="' + x(t) + '" x2="' + x(t) + '" y1="' + T + '" y2="' + (H - B + 4) + '" stroke-dasharray="' + (t ? '2 4' : '0') + '"/>';
+    s += '<text class="tick" x="' + x(t) + '" y="' + (H - 12) + '" text-anchor="middle">' + t + '%</text>';
+  }
+  rows.forEach(function (r, i) {
+    var y = T + i * rowH + rowH / 2;
+    s += '<g class="row"><title>' + r.s + ': ' + r.use + '% machines in use, ' + r.no + '% couldn’t access, crowding ' + r.crowd + ' of 5</title>';
+    s += '<rect x="0" y="' + (y - rowH / 2) + '" width="' + W + '" height="' + rowH + '" fill="transparent"/>';
+    s += '<text class="rowlab" x="0" y="' + (y + 4) + '">' + r.s + '</text>';
+    s += '<line class="link" x1="' + x(r.use) + '" x2="' + x(r.no) + '" y1="' + y + '" y2="' + y + '"/>';
+    s += '<circle class="d-use" cx="' + x(r.use) + '" cy="' + y + '" r="6.5"/>';
+    s += '<circle class="d-no" cx="' + x(r.no) + '" cy="' + y + '" r="6.5"/>';
+    var close = (r.no - r.use) < 4;
+    s += '<text class="val" x="' + (x(r.use) - 11) + '" y="' + (close ? y - 11 : y + 4) + '" text-anchor="end">' + r.use + '%</text>';
+    s += '<text class="val" x="' + (x(r.no) + 11) + '" y="' + (close ? y - 11 : y + 4) + '">' + r.no.toFixed(1) + '%</text>';
+    s += '</g>';
+  });
+  s += '</svg>';
+  document.getElementById('dumbbell').innerHTML = s;
+
+  // Machine demand table with inline bars
+  var m = [
+    ['Treadmill', 33.7, 33.3, 39.3, 46.6],
+    ['Stairmaster', 36.1, 28.7, 44.1, 32.6],
+    ['Elliptical', 10.5, 4.0, 13.3, 3.0],
+    ['Stationary bike', 6.6, 7.4, 5.9, 9.6],
+    ['Arc trainer, hand pedals, other', 0, 0, 0, 0]
+  ];
+  document.getElementById('machines').innerHTML = m.map(function (r) {
+    return '<tr><td>' + r[0] + '</td>' + r.slice(1).map(function (v) {
+      return '<td><div class="barcell"><i style="width:' + (v / 50 * 100) + '%"></i><span>' + v.toFixed(1) + '%</span></div></td>';
+    }).join('') + '</tr>';
+  }).join('');
+
+  // Adaptation behavior
+  var a = [['Waited', 50.0], ['Shortened workout', 16.7], ['Switched machines', 12.5], ['Skipped an activity', 12.5], ['Moved to another area', 4.2]];
+  document.getElementById('adapt').innerHTML = a.map(function (r) {
+    return '<div><b style="font-weight:600">' + r[0] + '</b><i style="width:' + (r[1] / 50 * 100) + '%"></i><span>' + r[1].toFixed(1) + '%</span></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

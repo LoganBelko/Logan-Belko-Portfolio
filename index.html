@@ -16,7 +16,7 @@
   <div class="wrap">
     <a class="name" href="#top">Logan Belko</a>
     <ul>
-      <li><a href="#work">Work</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -36,14 +36,15 @@
       <figure class="stage sheet">
         <span class="reg tl"></span><span class="reg tr"></span>
         <h1 class="vh">Logan Belko</h1>
-        <svg class="cut" viewBox="0 0 1000 158" aria-hidden="true" focusable="false">
+        <svg class="hero-svg" viewBox="0 0 1318 808" role="img" aria-label="Logan Belko, with the letters cut out of a photo of SouthREC at the University of Arizona">
           <defs>
-            <mask id="name-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="158">
-              <rect x="0" y="0" width="1000" height="158" fill="#fff"></rect>
-              <text x="0" y="150" textLength="1000" lengthAdjust="spacingAndGlyphs" font-size="178" fill="#000">Logan Belko</text>
-            </mask>
+            <pattern id="hero-photo" patternUnits="userSpaceOnUse" x="0" y="0" width="1318" height="808">
+              <image href="assets/img/southrec-hero.jpg" x="0" y="0" width="1318" height="808" preserveAspectRatio="xMidYMid slice"></image>
+            </pattern>
           </defs>
-          <rect x="0" y="0" width="1000" height="158" mask="url(#name-mask)"></rect>
+          <rect x="0" y="0" width="1318" height="808" fill="url(#hero-photo)"></rect>
+          <rect class="paper" x="-2" y="-2" width="1322" height="120"></rect>
+          <text x="-3" y="119" font-size="178" textLength="1330" lengthAdjust="spacingAndGlyphs" fill="url(#hero-photo)">LOGAN BELKO</text>
         </svg>
         <figcaption>SouthREC, University of Arizona. Site of my senior capstone.</figcaption>
       </figure>
@@ -51,7 +52,7 @@
       <div class="hero-foot">
         <p class="lede">I study how buildings and landscapes perform once people actually use them, using field observation, surveys, and spatial data.</p>
         <div class="actions">
-          <a class="btn" href="#work">See my work</a>
+          <a class="btn" href="work.html">See my work</a>
           <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
       </div>
@@ -75,7 +76,7 @@
           <div class="stat"><b>36%</b><span>of evening users at SouthREC couldn't get the equipment they came for</span></div>
           <div class="stat"><b>4%</b><span>moved to another area when blocked. Half just waited.</span></div>
         </div>
-        <div class="actions"><a class="btn" href="capstone.html">Read the case study</a></div>
+        <div class="actions"><a class="btn" href="capstone.html">Read the case study</a><a class="btn ghost" href="https://repository.arizona.edu/items/dd9e763f-9bd4-4ec1-b362-192975fb0008" target="_blank" rel="noopener">Published paper</a></div>
       </div>
     </div>
   </section>
@@ -88,39 +89,39 @@
       </div>
       <div class="plots">
         <article class="plot sust">
-          <div class="side">Sustainability</div>
+          <div class="tag">Sustainability</div>
           <div class="body">
             <img src="assets/img/barrio-metalico.jpg" width="799" height="816" alt="Corrugated metal facade of a Barrio Metalico housing unit in Tucson, behind a rusted metal fence.">
             <div class="text">
               <h3>Building performance and Net Zero strategy</h3>
               <p class="desc">How buildings perform in use, and how to close the gap between certification and experience.</p>
               <ul>
-                <li><a href="capstone.html">Recreation center utilization study</a><span class="status">Senior capstone</span></li>
-                <li>Net Zero retrofit: Barrio Metalico, Tucson<span class="status">Page in progress</span></li>
+                <li><a href="capstone.html">Recreation Center Utilization Study</a><span class="status">Senior capstone</span></li>
+                <li>Net Zero Retrofit: Barrio Metalico, Tucson<span class="status">Page in progress</span></li>
               </ul>
             </div>
           </div>
         </article>
         <article class="plot env">
-          <div class="side">Environmental</div>
+          <div class="tag">Environmental</div>
           <div class="body">
             <img src="assets/img/rincon-wash.jpg" width="720" height="864" alt="Dry urban wash in Tucson lined with mesquite and dense brush.">
             <div class="text">
               <h3>Field assessment and restoration</h3>
               <ul>
-                <li>Rincon Heights ecological restoration study<span class="status">Page in progress</span></li>
+                <li><a href="rincon.html">Rincon Heights Ecological Restoration Study</a><span class="status">Field study</span></li>
               </ul>
             </div>
           </div>
         </article>
         <article class="plot gis">
-          <div class="side">GIS &amp; mapping</div>
+          <div class="tag">GIS &amp; Mapping</div>
           <div class="body">
             <img src="assets/img/stl-gis-poster.jpg" width="1400" height="1867" style="object-position: center 42%" alt="Poster titled Environmental Inequity in St. Louis, with maps of tree canopy and impervious surface by neighborhood.">
             <div class="text">
               <h3>Spatial analysis and environmental equity</h3>
               <ul>
-                <li>Tree canopy and urban heat in St. Louis<span class="status">Page in progress</span></li>
+                <li><a href="stl-gis.html">Environmental Inequity in St. Louis</a><span class="status">GIS analysis</span></li>
               </ul>
             </div>
           </div>
@@ -130,16 +131,22 @@
   </section>
 
   <section class="about" id="about" aria-labelledby="about-h">
-    <div class="wrap grid">
-      <div class="copy">
-        <h2 id="about-h">About</h2>
-        <p>I graduated from the University of Arizona in May 2026 with a B.S. in Sustainable Built Environments. My work combines field observation, survey research, and GIS to find where design intentions and real-world use don't line up, and what to do about it.</p>
-        <p>Before graduating, I spent nearly two years as a personal trainer at UA Campus Recreation. That's where my capstone question came from: why does a gym feel crowded when most of its machines are empty?</p>
-        <p>Outside of work, I'm usually hiking in a national park with a camera.</p>
-      </div>
+    <div class="grid" style="position:relative">
       <figure>
         <img src="assets/img/logan-arches.jpg" width="900" height="1581" alt="Logan Belko standing beneath a red sandstone arch on a sandy trail.">
       </figure>
+      <span class="mark" aria-hidden="true">About</span>
+      <div class="copy">
+        <h2 id="about-h">About me</h2>
+        <p>I graduated from the University of Arizona in May 2026 with a B.S. in Sustainable Built Environments. My work combines field observation, survey research, and GIS to find where design intentions and real-world use don't line up, and what to do about it.</p>
+        <p>Before graduating, I spent nearly two years as a personal trainer at UA Campus Recreation. That's where my capstone question came from: why does a gym feel crowded when most of its machines are empty?</p>
+        <p>Outside of work, I'm usually hiking in a national park with a camera.</p>
+        <div class="ethos" aria-label="How I work">
+          <div><b>Push past the obvious</b><span>The first finding is rarely the whole story. I look for the pattern underneath it.</span></div>
+          <div><b>Stay grounded</b><span>Every idea starts from what the site, the data, and the people actually show.</span></div>
+          <div><b>Be bold with the answer</b><span>Once the evidence is solid, I'd rather propose something ambitious than settle for safe.</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -173,6 +180,32 @@ document.querySelectorAll('.copy-btn').forEach(function (b) {
     function selectText() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
   });
 });
+</script>
+<script>
+// Fit the name to the photo's edges using the font that actually loaded:
+// measure the letters' ink, scale so the L and O touch the left and right edges,
+// and set the baseline on the top of the photo with no gap.
+(function () {
+  var svg = document.querySelector('.hero-svg');
+  if (!svg || !document.fonts) return;
+  var t = svg.querySelector('text'), paper = svg.querySelector('.paper'), W = 1318;
+  function fit() {
+    var ctx = document.createElement('canvas').getContext('2d');
+    ctx.font = '900 100px Archivo';
+    var m = ctx.measureText(t.textContent);
+    if (!m.actualBoundingBoxAscent) return;
+    var left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight, asc = m.actualBoundingBoxAscent;
+    var k = W / (right - left);
+    t.removeAttribute('textLength'); t.removeAttribute('lengthAdjust');
+    t.setAttribute('font-size', (100 * k).toFixed(3));
+    t.setAttribute('x', (-left * k).toFixed(3));
+    var base = asc * k;
+    t.setAttribute('y', base.toFixed(3));
+    paper.setAttribute('height', (base + 2 - 1.5).toFixed(3)); // paper stops just above the baseline
+  }
+  document.fonts.load('900 100px Archivo').then(fit, fit);
+  window.addEventListener('load', fit);
+})();
 </script>
 </body>
 </html>

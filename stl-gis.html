@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Environmental Inequity in St. Louis | Logan Belko</title>
+<meta name="description" content="GIS analysis by Logan Belko of tree canopy, impervious surface, race, and income across St. Louis neighborhoods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="index.html">Logan Belko</a>
+    <ul>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="wrap p-hero">
+    <a class="back" href="work.html">Back to all work</a>
+    <dl class="tblock">
+      <div><dt>Project</dt><dd>GIS spatial analysis</dd></div>
+      <div><dt>Course</dt><dd>LAR 470, University of Arizona</dd></div>
+      <div><dt>Date</dt><dd>Spring 2026</dd></div>
+      <div><dt>Tools</dt><dd>ArcGIS Pro</dd></div>
+      <div><dt>Data</dt><dd>NLCD 2021, American Community Survey</dd></div>
+    </dl>
+    <h1>Environmental inequity in St. Louis</h1>
+    <p class="sub">Who gets shade, and who gets pavement. Tree canopy, impervious surface, race, and income mapped across all 79 city neighborhoods.</p>
+  </header>
+
+  <section class="p-section" aria-labelledby="prob-h">
+    <div class="wrap split">
+      <h2 id="prob-h">Spatial disparity</h2>
+      <div class="content">
+        <p>Trees cool streets, soak up stormwater, and clean the air. Pavement and rooftops do the opposite: they hold heat, shed runoff, and raise summer temperatures block by block. Where a family lives decides how much of each they get.</p>
+        <p>St. Louis is a city shaped by industrial growth and decades of racial segregation. This project asks a direct question: <strong>does the distribution of tree canopy and impervious surface follow the same lines as race and income?</strong></p>
+        <dl class="spec">
+          <div><dt>Study area</dt><dd>City of St. Louis, 79 neighborhoods</dd></div>
+          <div><dt>Unit</dt><dd>Raster data aggregated to the neighborhood level</dd></div>
+          <div><dt>Methods</dt><dd>Reclassify, raster clip, joins, Spatial Analyst, and geoprocessing in ArcGIS Pro</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="layer" aria-labelledby="l1-h">
+      <figure>
+        <img src="assets/img/stl-map-context.jpg" width="658" height="834" alt="Map of Missouri with the City of St. Louis highlighted in red on the state's eastern border.">
+        <figcaption>Study area. City of St. Louis within Missouri.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Layer 01 · Context</span>
+        <h2 id="l1-h">An independent city on the river</h2>
+        <p>St. Louis City is separate from St. Louis County, with fixed boundaries set in 1876. That makes it a closed system: whatever canopy and pavement exist inside those lines have to serve everyone who lives there.</p>
+      </div>
+    </section>
+
+    <section class="layer" aria-labelledby="l2-h">
+      <figure>
+        <img src="assets/img/stl-map-canopy.jpg" width="593" height="762" alt="Choropleth map of tree canopy coverage by St. Louis neighborhood, from very low canopy in pale green to very high canopy in dark green.">
+        <figcaption>Tree canopy coverage by neighborhood, NLCD 2021.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Layer 02 · Tree canopy</span>
+        <h2 id="l2-h">Where the shade is</h2>
+        <dl class="reads">
+          <div><dt>Measures</dt><dd>Share of each neighborhood covered by tree canopy</dd></div>
+          <div><dt>Why it matters</dt><dd>Canopy is the city's cheapest cooling and stormwater infrastructure</dd></div>
+          <div><dt>Intersects with</dt><dd>Impervious surface, its inverse, and income, which shapes who can plant and maintain trees</dd></div>
+        </dl>
+        <div class="ph"><b>To add</b><span>Canopy range across neighborhoods (lowest vs. highest %) once maps are rebuilt.</span></div>
+      </div>
+    </section>
+
+    <section class="layer" aria-labelledby="l3-h">
+      <figure>
+        <img src="assets/img/stl-map-impervious.jpg" width="592" height="760" alt="Map of impervious surface across St. Louis, from very low in light green to very high in dark red, with neighborhood boundaries overlaid.">
+        <figcaption>Impervious surface coverage, NLCD 2021.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Layer 03 · Impervious surface</span>
+        <h2 id="l3-h">Where the heat builds</h2>
+        <dl class="reads">
+          <div><dt>Measures</dt><dd>Share of land sealed by roads, roofs, and parking, from 0–15% to 86–100%</dd></div>
+          <div><dt>Why it matters</dt><dd>Sealed ground stores heat and sends stormwater straight to the sewers</dd></div>
+          <div><dt>Intersects with</dt><dd>Canopy loss, industrial land use, and highway corridors</dd></div>
+        </dl>
+        <div class="ph"><b>To add</b><span>Share of neighborhoods in the highest impervious classes, and where they cluster.</span></div>
+      </div>
+    </section>
+
+    <section class="layer" aria-labelledby="l4-h">
+      <figure>
+        <img src="assets/img/stl-map-bivariate.jpg" width="622" height="795" alt="Bivariate map of St. Louis neighborhoods combining minority population percentage and median household income.">
+        <figcaption>Minority population share and median household income, ACS.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Layer 04 · Race and income</span>
+        <h2 id="l4-h">Who lives there</h2>
+        <dl class="reads">
+          <div><dt>Measures</dt><dd>Minority population share and median household income, combined in a nine-class bivariate scheme</dd></div>
+          <div><dt>Why it matters</dt><dd>It shows where racial and economic disadvantage overlap, rather than treating them separately</dd></div>
+          <div><dt>Intersects with</dt><dd>Every layer above</dd></div>
+        </dl>
+        <p>Laid over the first three layers, the pattern holds: the neighborhoods with the least tree cover and the most pavement tend to be the ones with lower incomes and higher shares of residents of color.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="verdict" aria-labelledby="v-h">
+    <div class="wrap">
+      <h2 id="v-h">This isn't a coincidence of geography</h2>
+      <p>The same neighborhoods keep showing up at the bottom of every environmental layer, and they're the same neighborhoods drawn out of investment generations ago. Shade, parks, and clean air followed money, and money followed race. The result is environmental racism written into the landscape, where it keeps raising heat and flood risk for the people with the fewest resources to cope.</p>
+      <p>Mapping it is the first step. Fixing it means spending where the maps point.</p>
+      <ul class="acts">
+        <li><b>Plant by need</b><span>Rank tree planting and maintenance funds by canopy deficit and heat exposure, not by request volume.</span></li>
+        <li><b>Depave and green</b><span>Convert vacant lots, schoolyards, and oversized parking into shaded, permeable ground.</span></li>
+        <li><b>Cool the streets</b><span>Pair reflective paving and green stormwater systems with the most sealed corridors.</span></li>
+        <li><b>Protect residents</b><span>Tie greening to community stewardship and anti-displacement measures so improvements serve the people already there.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="next-h">
+    <div class="wrap split">
+      <h2 id="next-h">Limits and next steps</h2>
+      <div class="content">
+        <p>The analysis compares patterns visually, at the neighborhood level. I attempted land surface temperature from satellite imagery, but it proved too complex for the project timeline. The rebuilt version will add canopy percentages per neighborhood, a statistical test of the relationships, and surface temperature as a fifth layer.</p>
+        <div class="links-row">
+          <a class="btn ghost" href="assets/img/stl-gis-poster.jpg" target="_blank" rel="noopener">View the original poster</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Logan Belko. Maps by Logan Belko. Basemap: Esri and contributors.</div></footer>
+</body>
+</html>

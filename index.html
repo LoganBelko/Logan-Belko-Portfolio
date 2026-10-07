@@ -16,7 +16,7 @@
   <div class="wrap">
     <a class="name" href="#top">Logan Belko</a>
     <ul>
-      <li><a href="work.html">Work</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -36,23 +36,22 @@
       <figure class="stage sheet">
         <span class="reg tl"></span><span class="reg tr"></span>
         <h1 class="vh">Logan Belko</h1>
-        <svg class="hero-svg" viewBox="0 0 1318 808" role="img" aria-label="Logan Belko, with the letters cut out of a photo of SouthREC at the University of Arizona">
+        <svg class="cut" viewBox="0 0 1000 158" aria-hidden="true" focusable="false">
           <defs>
-            <pattern id="hero-photo" patternUnits="userSpaceOnUse" x="0" y="0" width="1318" height="808">
-              <image href="assets/img/southrec-hero.jpg" x="0" y="0" width="1318" height="808" preserveAspectRatio="xMidYMid slice"></image>
-            </pattern>
+            <mask id="name-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="158">
+              <rect x="0" y="0" width="1000" height="158" fill="#fff"></rect>
+              <text x="0" y="150" textLength="1000" lengthAdjust="spacingAndGlyphs" font-size="178" fill="#000">LOGAN BELKO</text>
+            </mask>
           </defs>
-          <rect x="0" y="0" width="1318" height="808" fill="url(#hero-photo)"></rect>
-          <rect class="paper" x="-2" y="-2" width="1322" height="120"></rect>
-          <text x="-3" y="119" font-size="178" textLength="1330" lengthAdjust="spacingAndGlyphs" fill="url(#hero-photo)">LOGAN BELKO</text>
+          <rect class="paper" x="0" y="0" width="1000" height="158" mask="url(#name-mask)"></rect>
         </svg>
         <figcaption>SouthREC, University of Arizona. Site of my senior capstone.</figcaption>
       </figure>
 
       <div class="hero-foot">
-        <p class="lede">I work where healthy places and healthy people meet, using field observation, surveys, and spatial data to find what holds both back.</p>
+        <p class="lede">I study how buildings and landscapes perform once people actually use them, using field observation, surveys, and spatial data.</p>
         <div class="actions">
-          <a class="btn" href="work.html">See my work</a>
+          <a class="btn" href="#work">See my work</a>
           <a class="btn ghost" href="#contact">Get in touch</a>
         </div>
       </div>
@@ -96,8 +95,8 @@
               <h3>Building performance and Net Zero strategy</h3>
               <p class="desc">How buildings perform in use, and how to close the gap between certification and experience.</p>
               <ul>
-                <li><a href="capstone.html">Recreation Center Utilization Study</a><span class="status">Senior capstone</span></li>
-                <li>Net Zero Retrofit: Barrio Metalico, Tucson<span class="status">Page in progress</span></li>
+                <li><a href="capstone.html">Recreation center utilization study</a><span class="status">Senior capstone</span></li>
+                <li>Net Zero retrofit: Barrio Metalico, Tucson<span class="status">Page in progress</span></li>
               </ul>
             </div>
           </div>
@@ -109,7 +108,7 @@
             <div class="text">
               <h3>Field assessment and restoration</h3>
               <ul>
-                <li><a href="rincon.html">Rincon Heights Ecological Restoration Study</a><span class="status">Field study</span></li>
+                <li>Rincon Heights ecological restoration study<span class="status">Page in progress</span></li>
               </ul>
             </div>
           </div>
@@ -121,7 +120,7 @@
             <div class="text">
               <h3>Spatial analysis and environmental equity</h3>
               <ul>
-                <li><a href="stl-gis.html">Environmental Inequity in St. Louis</a><span class="status">GIS analysis</span></li>
+                <li>Tree canopy and urban heat in St. Louis<span class="status">Page in progress</span></li>
               </ul>
             </div>
           </div>
@@ -135,17 +134,12 @@
       <figure>
         <img src="assets/img/logan-arches.jpg" width="900" height="1581" alt="Logan Belko standing beneath a red sandstone arch on a sandy trail.">
       </figure>
+      <span class="mark" aria-hidden="true">About</span>
       <div class="copy">
         <h2 id="about-h">About me</h2>
-        <p class="lede" style="font-size: var(--step-1); max-width: none">Healthy places and healthy people are the same project.</p>
-        <p>I learned that at Glacier National Park as a kid. I was so in awe of it that the only conclusion I could reach was that places like it have to stay protected for every generation after mine. That idea carried me into a B.S. in Sustainable Built Environments at the University of Arizona.</p>
-        <p>Nearly two years as a personal trainer at UA Campus Recreation added the other half. I saw how people feel about their bodies in public, and how much the built environment decides who gets to move freely, safely, and without feeling watched. To me, equity reaches past income and demographics to whether a body, any body, can get outside and move.</p>
-        <div class="ethos" aria-label="How I work">
-          <div><b>Read the pattern</b><span>I see geometry and movement first: where a wash ran before the pavement, where people actually walk, where space works against them.</span></div>
-          <div><b>Act in stages</b><span>Start with what's free and immediate, then build toward what takes time and money. A 1% benefit for everyone beats waiting for a perfect plan.</span></div>
-          <div><b>Steward land and people together</b><span>The best interventions serve both at once, and they're designed for every body, including the ones the built environment usually forgets.</span></div>
-        </div>
-        <p>Most environmental work stops at prevention. I want to push it toward evolution: tearing up concrete, changing how public space works, and making cities healthier for the people who live in them.</p>
+        <p>I graduated from the University of Arizona in May 2026 with a B.S. in Sustainable Built Environments. My work combines field observation, survey research, and GIS to find where design intentions and real-world use don't line up, and what to do about it.</p>
+        <p>Before graduating, I spent nearly two years as a personal trainer at UA Campus Recreation. That's where my capstone question came from: why does a gym feel crowded when most of its machines are empty?</p>
+        <p>Outside of work, I'm usually hiking in a national park with a camera.</p>
       </div>
     </div>
   </section>
@@ -180,32 +174,6 @@ document.querySelectorAll('.copy-btn').forEach(function (b) {
     function selectText() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
   });
 });
-</script>
-<script>
-// Fit the name to the photo's edges using the font that actually loaded:
-// measure the letters' ink, scale so the L and O touch the left and right edges,
-// and set the baseline on the top of the photo with no gap.
-(function () {
-  var svg = document.querySelector('.hero-svg');
-  if (!svg || !document.fonts) return;
-  var t = svg.querySelector('text'), paper = svg.querySelector('.paper'), W = 1318;
-  function fit() {
-    var ctx = document.createElement('canvas').getContext('2d');
-    ctx.font = '900 100px Archivo';
-    var m = ctx.measureText(t.textContent);
-    if (!m.actualBoundingBoxAscent) return;
-    var left = -m.actualBoundingBoxLeft, right = m.actualBoundingBoxRight, asc = m.actualBoundingBoxAscent;
-    var k = W / (right - left);
-    t.removeAttribute('textLength'); t.removeAttribute('lengthAdjust');
-    t.setAttribute('font-size', (100 * k).toFixed(3));
-    t.setAttribute('x', (-left * k).toFixed(3));
-    var base = asc * k;
-    t.setAttribute('y', base.toFixed(3));
-    paper.setAttribute('height', (base + 2 - 1.5).toFixed(3)); // paper stops just above the baseline
-  }
-  document.fonts.load('900 100px Archivo').then(fit, fit);
-  window.addEventListener('load', fit);
-})();
 </script>
 </body>
 </html>

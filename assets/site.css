@@ -386,3 +386,11 @@ details summary { cursor: pointer; color: var(--muted); }
 .w-band.other { --c: var(--muted); }
 .w-item.compact { grid-template-columns: minmax(0, 1fr) auto; }
 @media (max-width: 700px) { .w-item.compact { grid-template-columns: 1fr; } }
+
+/* St. Louis correlation chart */
+.chart-card .hgroup { font-family: var(--display); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.chart-card .hbars + .hgroup { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); }
+.hbars.corr i { background: var(--sage); min-width: 3px; }
+.hbars.corr i.alt { background: var(--sky); }
+.hbars.corr i.weak { background: var(--rust); }
+.chart-card .chart-note { margin: 18px 0 0; font-family: var(--display); font-size: var(--step--1); color: var(--muted); line-height: 1.45; }

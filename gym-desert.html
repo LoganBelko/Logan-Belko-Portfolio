@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gym Deserts in St. Louis | Logan Belko</title>
+<meta name="description" content="A GIS analysis by Logan Belko mapping access to gyms, public rec centers, and free outdoor fitness across St. Louis City and County, compared with CDC health estimates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="index.html">Logan Belko</a>
+    <ul>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="p-hero field sky">
+    <div class="wrap">
+      <a class="back" href="work.html">Back to all work</a>
+      <dl class="tblock">
+        <div><dt>Project</dt><dd>Independent GIS analysis</dd></div>
+        <div><dt>Date</dt><dd>October 2026</dd></div>
+        <div><dt>Study area</dt><dd>St. Louis City and County, 62 ZIP codes</dd></div>
+        <div><dt>Tools</dt><dd>ArcGIS Pro, Python</dd></div>
+        <div><dt>Data</dt><dd>Census Business Patterns 2023, CDC PLACES 2025, OpenStreetMap</dd></div>
+      </dl>
+      <h1>Gym deserts in St. Louis</h1>
+      <p class="sub">Where can people actually go to work out? Nearly half of the city and county lives in a ZIP code with fewer than 3 gyms, and those same ZIP codes have the region's highest rates of obesity, diabetes, and physical inactivity.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="keyfigs">
+      <div><b>47%</b><span>of city and county residents, about 636,000 people, live in ZIP codes with fewer than 3 gyms.</span></div>
+      <div><b>32% / 21%</b><span>Adults who get no leisure-time physical activity in those ZIP codes, against ZIP codes with 3 or more gyms.</span></div>
+      <div><b>186,000</b><span>people live in 10 ZIP codes with fewer than 3 gyms, no public rec center, and no outdoor fitness station.</span></div>
+    </div>
+  </div>
+
+  <section class="p-section" aria-labelledby="q-h" style="margin-top: clamp(40px, 6vw, 72px)">
+    <div class="wrap split">
+      <h2 id="q-h">Why this question</h2>
+      <div class="content">
+        <p>Nearly two years as a personal trainer at the University of Arizona's recreation centers shaped how I think about equity. It includes whether a person has a safe, affordable place nearby to move.</p>
+        <p>"Food deserts" are a familiar idea. This project asks the same question about exercise: <strong>where in St. Louis are people farthest from places to be active, and do those places line up with worse health?</strong></p>
+        <dl class="spec">
+          <div><dt>Study area</dt><dd>St. Louis City and St. Louis County, 62 ZIP codes with at least 1,000 residents</dd></div>
+          <div><dt>Private gyms</dt><dd>U.S. Census Bureau ZIP Code Business Patterns 2023, NAICS 713940 (Fitness and Recreational Sports Centers)</dd></div>
+          <div><dt>Public options</dt><dd>45 public rec centers and YMCAs compiled from city, county, municipal, and YMCA listings and geocoded; 76 free outdoor fitness stations from OpenStreetMap</dd></div>
+          <div><dt>Health</dt><dd>CDC PLACES 2025 ZIP code estimates: obesity, physical inactivity, diabetes, heart disease</dd></div>
+          <div><dt>GIS workflow</dt><dd>Overpass queries, JSON To Features, Clip, Spatial Join, Join Field, Append, Calculate Field, Geocode Addresses, Summarize Within in ArcGIS Pro</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="d-h">
+    <div class="wrap split">
+      <h2 id="d-h">Choosing the right data</h2>
+      <div class="content">
+        <p>The obvious free source for gym locations is OpenStreetMap, the volunteer-built world map. Before building on it, I checked it against the Census Bureau's count of fitness businesses in every ZIP code, which comes from tax and payroll records.</p>
+        <div class="finding">
+          <h3>Free map data missed most suburban gyms</h3>
+          <div class="chart-card tbl-wrap">
+            <table class="data">
+              <thead><tr><th>ZIP code</th><th>Area</th><th class="num">Census count</th><th class="num">OpenStreetMap</th></tr></thead>
+              <tbody>
+                <tr><td>63017</td><td>Chesterfield</td><td class="num">15</td><td class="num">1</td></tr>
+                <tr><td>63026</td><td>Fenton</td><td class="num">13</td><td class="num">2</td></tr>
+                <tr><td>63011</td><td>Ballwin</td><td class="num">13</td><td class="num">3</td></tr>
+                <tr><td>63119</td><td>Webster Groves</td><td class="num">11</td><td class="num">1</td></tr>
+                <tr><td>63144</td><td>Brentwood</td><td class="num">11</td><td class="num">1</td></tr>
+                <tr><td>63110</td><td>St. Louis (central city)</td><td class="num">5</td><td class="num">5</td></tr>
+                <tr><td>63146</td><td>Maryland Heights</td><td class="num">5</td><td class="num">5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>In 19 of the 29 ZIP codes the Census reports in detail, OpenStreetMap had fewer than half of the gyms, about 120 missing in all. The gaps were worst in the suburbs. Built on the free data, Chesterfield would have looked like a gym desert, the opposite of the truth.</p>
+        </div>
+        <p>So the map uses the Census count for private gyms, as gyms per 10,000 residents. The Census leaves out government-run facilities, so I built a separate list of public rec centers and YMCAs from city, county, and municipal sources. That list has 45 facilities; OpenStreetMap had 21, two of which turned out to be a campus gym and a youth sports league.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="layer" aria-labelledby="l1-h">
+      <figure>
+        <img src="assets/img/gym-desert-access.jpg" width="1200" height="1553" loading="lazy" alt="Map of private gyms per 10,000 residents by ZIP code in St. Louis City and County. ZIP codes with fewer than 3 gyms are hatched in rust and cover most of North City, North County, South City, and the southwest fringe. The central and west county are shaded blue. Dark points mark public rec centers and YMCAs, and green points mark outdoor fitness stations, many of them in the north.">
+        <figcaption>Private gyms per 10,000 residents, with public rec centers and outdoor fitness stations.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Map 01 · Access</span>
+        <h2 id="l1-h">Nearly half of St. Louis lives in a gym desert</h2>
+        <dl class="reads">
+          <div><dt>Shading</dt><dd>Private gyms and studios per 10,000 residents. ZIP codes with 3 or more range from 0.7 to 13.</dd></div>
+          <div><dt>Hatching</dt><dd>33 ZIP codes with fewer than 3 private gyms, home to 47% of residents</dd></div>
+          <div><dt>Points</dt><dd>Public rec centers and YMCAs, and free outdoor fitness stations</dd></div>
+        </dl>
+        <p>The hatched ZIP codes cover most of North City and North County, much of South City, and the southwest fringe around Pacific, Eureka, and High Ridge. Public rec centers are spread fairly evenly, about 0.33 per 10,000 residents inside and outside the gym deserts. Outdoor fitness stations aren't: there are five times as many per resident in the gym deserts, mostly in North City and North County.</p>
+      </div>
+    </section>
+
+    <section class="layer" aria-labelledby="l2-h">
+      <figure>
+        <img src="assets/img/gym-desert-health.jpg" width="1200" height="1553" loading="lazy" alt="Map of the share of adults with no leisure-time physical activity by ZIP code, from under 21 percent in pale lavender to 36 to 45 percent in deep purple. The darkest ZIP codes are in North City and North County, nearly all of them hatched as having fewer than 3 gyms. The west county is the palest.">
+        <figcaption>Adults with no leisure-time physical activity, CDC PLACES 2025. Hatched ZIP codes have fewer than 3 gyms.</figcaption>
+      </figure>
+      <div class="n">
+        <span class="idx">Map 02 · Health</span>
+        <h2 id="l2-h">Where gyms are scarce, inactivity runs high</h2>
+        <dl class="reads">
+          <div><dt>Measures</dt><dd>Share of adults reporting no physical activity outside work, from 17% to 45% by ZIP code</dd></div>
+          <div><dt>Pattern</dt><dd>The darkest purple sits almost entirely under the gym desert hatching in North City and North County</dd></div>
+          <div><dt>Palest</dt><dd>The central and west county, where gym access is highest</dd></div>
+        </dl>
+        <p>Physical inactivity is the health measure most directly tied to having somewhere to exercise, so it leads this map. Obesity, diabetes, and heart disease follow the same pattern.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="p-section" aria-labelledby="t-h">
+    <div class="wrap split">
+      <h2 id="t-h">Testing it</h2>
+      <div class="content">
+        <div class="finding">
+          <h3>Health is worst where gyms are scarce</h3>
+          <div class="chart-card tbl-wrap">
+            <table class="data">
+              <thead><tr><th>Group of ZIP codes</th><th class="num">ZIPs</th><th class="num">Residents</th><th class="num">Inactive</th><th class="num">Obesity</th><th class="num">Diabetes</th><th class="num">Heart disease</th></tr></thead>
+              <tbody>
+                <tr><td>3 or more gyms</td><td class="num">29</td><td class="num">711,000</td><td class="num">21.4%</td><td class="num">28.5%</td><td class="num">9.6%</td><td class="num">5.5%</td></tr>
+                <tr><td>Fewer than 3, some public options</td><td class="num">23</td><td class="num">450,000</td><td class="num">33.3%</td><td class="num">39.2%</td><td class="num">15.6%</td><td class="num">6.9%</td></tr>
+                <tr><td>Fewer than 3, no public options</td><td class="num">10</td><td class="num">186,000</td><td class="num">28.4%</td><td class="num">36.4%</td><td class="num">13.2%</td><td class="num">6.4%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Shares of adults, weighted by population. Every difference between ZIP codes with fewer than 3 gyms and those with more is statistically significant (Mann-Whitney test, p &lt; 0.001).</p>
+        </div>
+
+        <div class="finding">
+          <h3>The gap behaves like a threshold</h3>
+          <p>Among ZIP codes with 3 or more gyms, more gyms didn't go with better health: none of the four measures correlated significantly with the gym rate. The difference is between having almost nothing nearby and having something. Going from 3 gyms per 10,000 residents to 10 adds little.</p>
+        </div>
+
+        <div class="finding">
+          <h3>The deepest deserts aren't the least healthy</h3>
+          <p>The 10 ZIP codes with no gyms, rec centers, or outdoor stations include suburban fringe areas like Wildwood, Pacific, High Ridge, and Valley Park, where residents drive and the median ZIP has about 68 acres of parkland per 1,000 people. The worst health numbers are in the low-gym ZIP codes that do have public options, mostly in North City and North County, where the median ZIP has about 6 acres of parkland per 1,000 people. Distance and parkland matter, but so do income and everything that comes with it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="verdict field ink" aria-labelledby="v-h">
+    <div class="wrap">
+      <h2 id="v-h">The market left gaps. Some have no backstop.</h2>
+      <p>Private gyms cluster in the central and west county. Nearly half of St. Louis City and County lives in ZIP codes the market has mostly skipped, and those ZIP codes carry the region's heaviest burden of inactivity and chronic disease.</p>
+      <p>This doesn't prove that missing gyms cause poor health. Income and race shape both, and the CDC's estimates are partly modeled from local demographics. What the maps do show is where public investment in places to move would reach the people with the least access and the most to gain.</p>
+      <ul class="acts">
+        <li><b>Build where the market won't</b><span>Prioritize new or expanded public fitness space in North City and North County ZIP codes with high inactivity.</span></li>
+        <li><b>Start with what's free</b><span>Outdoor fitness stations already cluster in the gym deserts. Expanding them is the fastest, cheapest step.</span></li>
+        <li><b>Close the true deserts</b><span>Florissant (63031), Spanish Lake, Bridgeton, North City's 63115, and South City's 63109 have no gyms, rec centers, or outdoor stations.</span></li>
+        <li><b>Measure distance, not borders</b><span>Plan by walking and transit time to the nearest option, since a rec center across a ZIP line still serves its neighbors.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="p-section" aria-labelledby="next-h">
+    <div class="wrap split">
+      <h2 id="next-h">Limits and next steps</h2>
+      <div class="content">
+        <ul class="bul">
+          <li><strong>Counts, not locations.</strong> The Census reports gyms per ZIP code, not addresses, and doesn't publish exact counts below 3. ZIP codes with 0, 1, or 2 gyms are treated as one group.</li>
+          <li><strong>A broad category.</strong> NAICS 713940 includes yoga studios, climbing gyms, and swim and tennis clubs along with conventional gyms.</li>
+          <li><strong>Residents, not visitors.</strong> Downtown's high rates partly reflect gyms that serve daily workers, not just the people who live there.</li>
+          <li><strong>Modeled health data.</strong> CDC PLACES estimates are modeled from survey and demographic data, not measured in each ZIP code.</li>
+          <li><strong>Hand-built list.</strong> The public rec center list reflects city, county, and YMCA listings as of October 2026.</li>
+          <li><strong>Correlation only.</strong> These are associations, not causes.</li>
+        </ul>
+        <p>Next, I'd measure walking and transit time from every neighborhood to its nearest public option, add income and race to separate access from the effects of poverty, and replace the ZIP code counts with exact gym locations from a business database.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="field down"><div class="wrap"><span>© 2026 Logan Belko. Maps by Logan Belko. Basemap: Esri and contributors.</span></div></footer>
+</body>
+</html>
